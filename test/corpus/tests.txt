@@ -1,0 +1,840 @@
+================================================================================
+SFM 4.12.0 change overview
+================================================================================
+EVERY 20 TICKS DO
+    INPUT fluid:: FROM a
+    INPUT 1 *log FROM a
+    INPUT EXCEPT *log FROM a
+    OUTPUT
+        1 EACH minecraft:*ingot,
+        1 EACH RETAIN 12 EACH minecraft:*stone,
+        *log,
+    EXCEPT cobblestone, iron_ingot,
+    TO b
+END
+--------------------------------------------------------------------------------
+
+(program
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (COLON)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (limit
+                  (quantity
+                    (number)))
+                (resourceid
+                  (IDENTIFIER)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (inputstatement
+          (INPUT)
+          (resourceexclusion
+            (EXCEPT)
+            (resourceid
+              (IDENTIFIER)))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (limit
+                  (quantity
+                    (number)
+                    (EACH)))
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))
+              (COMMA)
+              (resourcelimit
+                (limit
+                  (quantity
+                    (number)
+                    (EACH))
+                  (retention
+                    (RETAIN)
+                    (number)
+                    (EACH)))
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))
+              (COMMA)
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)))
+              (COMMA)))
+          (resourceexclusion
+            (EXCEPT)
+            (resourceid
+              (IDENTIFIER))
+            (COMMA)
+            (resourceid
+              (IDENTIFIER))
+            (COMMA))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+simpleComparison
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    input from a
+    if a has gt 100 iron then
+        output to b
+    else if a has gt 50 iron then
+        output to c
+    else if a has gt 10 iron then
+        output to d
+    else if a has gt 2 iron then
+        output to e
+    end
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (ifstatement
+          (IF)
+          (boolexpr
+            (labelaccess
+              (label
+                (IDENTIFIER)))
+            (HAS)
+            (resourcecomparison
+              (comparisonOp
+                (GT))
+              (number)
+              (resourceid
+                (IDENTIFIER))))
+          (THEN)
+          (block
+            (statement
+              (outputstatement
+                (OUTPUT)
+                (TO)
+                (labelaccess
+                  (label
+                    (IDENTIFIER))))))
+          (ELSE)
+          (IF)
+          (boolexpr
+            (labelaccess
+              (label
+                (IDENTIFIER)))
+            (HAS)
+            (resourcecomparison
+              (comparisonOp
+                (GT))
+              (number)
+              (resourceid
+                (IDENTIFIER))))
+          (THEN)
+          (block
+            (statement
+              (outputstatement
+                (OUTPUT)
+                (TO)
+                (labelaccess
+                  (label
+                    (IDENTIFIER))))))
+          (ELSE)
+          (IF)
+          (boolexpr
+            (labelaccess
+              (label
+                (IDENTIFIER)))
+            (HAS)
+            (resourcecomparison
+              (comparisonOp
+                (GT))
+              (number)
+              (resourceid
+                (IDENTIFIER))))
+          (THEN)
+          (block
+            (statement
+              (outputstatement
+                (OUTPUT)
+                (TO)
+                (labelaccess
+                  (label
+                    (IDENTIFIER))))))
+          (ELSE)
+          (IF)
+          (boolexpr
+            (labelaccess
+              (label
+                (IDENTIFIER)))
+            (HAS)
+            (resourcecomparison
+              (comparisonOp
+                (GT))
+              (number)
+              (resourceid
+                (IDENTIFIER))))
+          (THEN)
+          (block
+            (statement
+              (outputstatement
+                (OUTPUT)
+                (TO)
+                (labelaccess
+                  (label
+                    (IDENTIFIER))))))
+          (END))))
+    (END)))
+
+================================================================================
+hello world
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    input item:minecraft:stick from a
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+resource2
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    input item::stick from a
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+resource3
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    input item::stick from a
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+resource4
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    input stick from a
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+resource5
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    input fluid::water from a
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+resource6
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    input fluid:minecraft:water from a
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+resource7
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    input fluid:: from a
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (COLON)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+wildcardResourceIdentifiers
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    INPUT fluid:minecraft:water from a TOP SIDE
+    OUTPUT fluid:*:* to b
+    OUTPUT minecraft:* to b
+    OUTPUT *:iron_ingot to b
+    OUTPUT *:*:* to b
+    OUTPUT *:* to b
+    OUTPUT * to b
+    OUTPUT ".*:.*:.*" to b
+    OUTPUT ".*:.*" to b
+    OUTPUT ".*" to b
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (inputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER))
+            (sidequalifier
+              (side
+                (TOP))
+              (SIDE)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)
+                  (COLON)
+                  (IDENTIFIER)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (IDENTIFIER)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (string)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (string)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (string)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+quotedResourceIdentifiers
+================================================================================
+EVERY 20 TICKS DO
+    INPUT FROM a
+    OUTPUT "redstone" to b
+    OUTPUT "minecraft:iron_ingot" to b
+    OUTPUT "item:minecraft:gold_ingot" to b
+END
+--------------------------------------------------------------------------------
+
+(program
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (string)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (string)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (outputmatchers
+            (movement
+              (resourcelimit
+                (resourceid
+                  (string)))))
+          (TO)
+          (labelaccess
+            (label
+              (IDENTIFIER))))))
+    (END)))
+
+================================================================================
+booleanHasOperator
+================================================================================
+name "hello world"
+
+every 20 ticks do
+    input from a
+    if a has gt 100 energy:minecraft:iron then
+        output to b
+    end
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (FROM)
+          (labelaccess
+            (label
+              (IDENTIFIER)))))
+      (statement
+        (ifstatement
+          (IF)
+          (boolexpr
+            (labelaccess
+              (label
+                (IDENTIFIER)))
+            (HAS)
+            (resourcecomparison
+              (comparisonOp
+                (GT))
+              (number)
+              (resourceid
+                (IDENTIFIER)
+                (COLON)
+                (IDENTIFIER)
+                (COLON)
+                (IDENTIFIER))))
+          (THEN)
+          (block
+            (statement
+              (outputstatement
+                (OUTPUT)
+                (TO)
+                (labelaccess
+                  (label
+                    (IDENTIFIER))))))
+          (END))))
+    (END)))
+
+================================================================================
+quotedLabels
+================================================================================
+name "hello world"
+
+every 20 ticks do
+  input from "u n i c o d e 😀"
+  output to "a s c i i"
+end
+--------------------------------------------------------------------------------
+
+(program
+  (name
+    (NAME)
+    (string))
+  (trigger
+    (EVERY)
+    (interval
+      (number)
+      (TICKS))
+    (DO)
+    (block
+      (statement
+        (inputstatement
+          (INPUT)
+          (FROM)
+          (labelaccess
+            (label
+              (string)))))
+      (statement
+        (outputstatement
+          (OUTPUT)
+          (TO)
+          (labelaccess
+            (label
+              (string))))))
+    (END)))

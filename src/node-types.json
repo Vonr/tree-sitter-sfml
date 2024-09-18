@@ -1,0 +1,1140 @@
+[
+  {
+    "type": "IDENTIFIER",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "LINE_COMMENT",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "comment_content",
+            "named": false
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "comment_start",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "boolexpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "AND",
+          "named": true
+        },
+        {
+          "type": "FALSE",
+          "named": true
+        },
+        {
+          "type": "HAS",
+          "named": true
+        },
+        {
+          "type": "LPAREN",
+          "named": true
+        },
+        {
+          "type": "NOT",
+          "named": true
+        },
+        {
+          "type": "OR",
+          "named": true
+        },
+        {
+          "type": "REDSTONE",
+          "named": true
+        },
+        {
+          "type": "RPAREN",
+          "named": true
+        },
+        {
+          "type": "TRUE",
+          "named": true
+        },
+        {
+          "type": "boolexpr",
+          "named": true
+        },
+        {
+          "type": "comparisonOp",
+          "named": true
+        },
+        {
+          "type": "labelaccess",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "resourcecomparison",
+          "named": true
+        },
+        {
+          "type": "setOp",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comparisonOp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "EQ",
+          "named": true
+        },
+        {
+          "type": "EQ_SYMBOL",
+          "named": true
+        },
+        {
+          "type": "GE",
+          "named": true
+        },
+        {
+          "type": "GE_SYMBOL",
+          "named": true
+        },
+        {
+          "type": "GT",
+          "named": true
+        },
+        {
+          "type": "GT_SYMBOL",
+          "named": true
+        },
+        {
+          "type": "LE",
+          "named": true
+        },
+        {
+          "type": "LE_SYMBOL",
+          "named": true
+        },
+        {
+          "type": "LT",
+          "named": true
+        },
+        {
+          "type": "LT_SYMBOL",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "forgetstatement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "COMMA",
+          "named": true
+        },
+        {
+          "type": "FORGET",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ifstatement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ELSE",
+          "named": true
+        },
+        {
+          "type": "END",
+          "named": true
+        },
+        {
+          "type": "IF",
+          "named": true
+        },
+        {
+          "type": "THEN",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "boolexpr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inputmatchers",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "movement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inputstatement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "EACH",
+          "named": true
+        },
+        {
+          "type": "FROM",
+          "named": true
+        },
+        {
+          "type": "INPUT",
+          "named": true
+        },
+        {
+          "type": "inputmatchers",
+          "named": true
+        },
+        {
+          "type": "labelaccess",
+          "named": true
+        },
+        {
+          "type": "resourceexclusion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "interval",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "SECONDS",
+          "named": true
+        },
+        {
+          "type": "TICK",
+          "named": true
+        },
+        {
+          "type": "TICKS",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "IDENTIFIER",
+          "named": true
+        },
+        {
+          "type": "REDSTONE",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "labelaccess",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "COMMA",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        },
+        {
+          "type": "roundrobin",
+          "named": true
+        },
+        {
+          "type": "sidequalifier",
+          "named": true
+        },
+        {
+          "type": "slotqualifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "limit",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "quantity",
+          "named": true
+        },
+        {
+          "type": "retention",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "movement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "COMMA",
+          "named": true
+        },
+        {
+          "type": "limit",
+          "named": true
+        },
+        {
+          "type": "resourcelimit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "NAME",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "outputmatchers",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "movement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "outputstatement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "EACH",
+          "named": true
+        },
+        {
+          "type": "OUTPUT",
+          "named": true
+        },
+        {
+          "type": "TO",
+          "named": true
+        },
+        {
+          "type": "labelaccess",
+          "named": true
+        },
+        {
+          "type": "outputmatchers",
+          "named": true
+        },
+        {
+          "type": "resourceexclusion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "program",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "trigger",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quantity",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "EACH",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "range",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "DASH",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rangeset",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "COMMA",
+          "named": true
+        },
+        {
+          "type": "range",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "redstonepulse",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "PULSE",
+          "named": true
+        },
+        {
+          "type": "REDSTONE",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "resourcecomparison",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comparisonOp",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "resourceid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "resourceexclusion",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "COMMA",
+          "named": true
+        },
+        {
+          "type": "EXCEPT",
+          "named": true
+        },
+        {
+          "type": "resourceid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "resourceid",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "COLON",
+          "named": true
+        },
+        {
+          "type": "IDENTIFIER",
+          "named": true
+        },
+        {
+          "type": "REDSTONE",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "resourcelimit",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "limit",
+          "named": true
+        },
+        {
+          "type": "resourceid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "retention",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "EACH",
+          "named": true
+        },
+        {
+          "type": "RETAIN",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "roundrobin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "BLOCK",
+          "named": true
+        },
+        {
+          "type": "BY",
+          "named": true
+        },
+        {
+          "type": "LABEL",
+          "named": true
+        },
+        {
+          "type": "ROBIN",
+          "named": true
+        },
+        {
+          "type": "ROUND",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "setOp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "EACH",
+          "named": true
+        },
+        {
+          "type": "EVERY",
+          "named": true
+        },
+        {
+          "type": "LONE",
+          "named": true
+        },
+        {
+          "type": "OVERALL",
+          "named": true
+        },
+        {
+          "type": "SOME",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "side",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "BOTTOM",
+          "named": true
+        },
+        {
+          "type": "EAST",
+          "named": true
+        },
+        {
+          "type": "NORTH",
+          "named": true
+        },
+        {
+          "type": "SOUTH",
+          "named": true
+        },
+        {
+          "type": "TOP",
+          "named": true
+        },
+        {
+          "type": "WEST",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sidequalifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "COMMA",
+          "named": true
+        },
+        {
+          "type": "EACH",
+          "named": true
+        },
+        {
+          "type": "SIDE",
+          "named": true
+        },
+        {
+          "type": "side",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "slotqualifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "SLOTS",
+          "named": true
+        },
+        {
+          "type": "rangeset",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "forgetstatement",
+          "named": true
+        },
+        {
+          "type": "ifstatement",
+          "named": true
+        },
+        {
+          "type": "inputstatement",
+          "named": true
+        },
+        {
+          "type": "outputstatement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "trigger",
+    "named": true,
+    "fields": {
+      "interval": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "interval",
+            "named": true
+          },
+          {
+            "type": "redstonepulse",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "DO",
+          "named": true
+        },
+        {
+          "type": "END",
+          "named": true
+        },
+        {
+          "type": "EVERY",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "AND",
+    "named": true
+  },
+  {
+    "type": "BLOCK",
+    "named": true
+  },
+  {
+    "type": "BOTTOM",
+    "named": true
+  },
+  {
+    "type": "BY",
+    "named": true
+  },
+  {
+    "type": "COLON",
+    "named": true
+  },
+  {
+    "type": "COMMA",
+    "named": true
+  },
+  {
+    "type": "DASH",
+    "named": true
+  },
+  {
+    "type": "DO",
+    "named": true
+  },
+  {
+    "type": "EACH",
+    "named": true
+  },
+  {
+    "type": "EAST",
+    "named": true
+  },
+  {
+    "type": "ELSE",
+    "named": true
+  },
+  {
+    "type": "END",
+    "named": true
+  },
+  {
+    "type": "EQ",
+    "named": true
+  },
+  {
+    "type": "EQ_SYMBOL",
+    "named": true
+  },
+  {
+    "type": "EVERY",
+    "named": true
+  },
+  {
+    "type": "EXCEPT",
+    "named": true
+  },
+  {
+    "type": "FALSE",
+    "named": true
+  },
+  {
+    "type": "FORGET",
+    "named": true
+  },
+  {
+    "type": "FROM",
+    "named": true
+  },
+  {
+    "type": "GE",
+    "named": true
+  },
+  {
+    "type": "GE_SYMBOL",
+    "named": true
+  },
+  {
+    "type": "GT",
+    "named": true
+  },
+  {
+    "type": "GT_SYMBOL",
+    "named": true
+  },
+  {
+    "type": "HAS",
+    "named": true
+  },
+  {
+    "type": "IF",
+    "named": true
+  },
+  {
+    "type": "INPUT",
+    "named": true
+  },
+  {
+    "type": "LABEL",
+    "named": true
+  },
+  {
+    "type": "LE",
+    "named": true
+  },
+  {
+    "type": "LE_SYMBOL",
+    "named": true
+  },
+  {
+    "type": "LONE",
+    "named": true
+  },
+  {
+    "type": "LPAREN",
+    "named": true
+  },
+  {
+    "type": "LT",
+    "named": true
+  },
+  {
+    "type": "LT_SYMBOL",
+    "named": true
+  },
+  {
+    "type": "NAME",
+    "named": true
+  },
+  {
+    "type": "NORTH",
+    "named": true
+  },
+  {
+    "type": "NOT",
+    "named": true
+  },
+  {
+    "type": "OR",
+    "named": true
+  },
+  {
+    "type": "OUTPUT",
+    "named": true
+  },
+  {
+    "type": "OVERALL",
+    "named": true
+  },
+  {
+    "type": "PULSE",
+    "named": true
+  },
+  {
+    "type": "REDSTONE",
+    "named": true
+  },
+  {
+    "type": "RETAIN",
+    "named": true
+  },
+  {
+    "type": "ROBIN",
+    "named": true
+  },
+  {
+    "type": "ROUND",
+    "named": true
+  },
+  {
+    "type": "RPAREN",
+    "named": true
+  },
+  {
+    "type": "SECONDS",
+    "named": true
+  },
+  {
+    "type": "SIDE",
+    "named": true
+  },
+  {
+    "type": "SLOTS",
+    "named": true
+  },
+  {
+    "type": "SOME",
+    "named": true
+  },
+  {
+    "type": "SOUTH",
+    "named": true
+  },
+  {
+    "type": "THEN",
+    "named": true
+  },
+  {
+    "type": "TICK",
+    "named": true
+  },
+  {
+    "type": "TICKS",
+    "named": true
+  },
+  {
+    "type": "TO",
+    "named": true
+  },
+  {
+    "type": "TOP",
+    "named": true
+  },
+  {
+    "type": "TRUE",
+    "named": true
+  },
+  {
+    "type": "WEST",
+    "named": true
+  },
+  {
+    "type": "comment_content",
+    "named": false
+  },
+  {
+    "type": "comment_start",
+    "named": false
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "string",
+    "named": true
+  }
+]
